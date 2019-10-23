@@ -1,0 +1,25 @@
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class Demo2 {	
+	public static void main(String[] args) throws IOException {
+		long begin = System.currentTimeMillis();
+		FileInputStream fis = new FileInputStream("D:/代码学习/b.txt");
+		FileOutputStream fos = new FileOutputStream("D:/代码学习/a.txt",true);
+		BufferedInputStream bis = new BufferedInputStream(fis);
+		BufferedOutputStream bos = new BufferedOutputStream(fos);
+		int len=0;
+		  
+		while((len=bis.read())!=-1) {
+			bos.write(len);
+		}
+		long end=System.currentTimeMillis();
+		System.out.print(end-begin+"mills");
+		bis.close();bos.close();
+	}
+	
+
+}
