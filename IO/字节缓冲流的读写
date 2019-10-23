@@ -12,6 +12,13 @@ public class Demo2 {
 		BufferedInputStream bis = new BufferedInputStream(fis);
 		BufferedOutputStream bos = new BufferedOutputStream(fos);
 		int len=0;
+//以数组方式		/*byte []bytes=new byte[1024];
+		
+		  
+		while((bis.read(bytes))!=-1) {
+			bos.write(bytes);
+		
+		}*
 		  
 		while((len=bis.read())!=-1) {
 			bos.write(len);
