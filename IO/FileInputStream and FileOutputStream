@@ -1,0 +1,24 @@
+import java.io.*;
+
+public class Demo1 {
+	public static void main(String[] args) throws IOException   {
+		FileInputStream fis = new FileInputStream("D:/代码学习/b.txt");
+		FileOutputStream fos =new FileOutputStream("D:/代码学习/a.txt");
+	
+		/*int len =0;
+		while((len=fis.read())!=-1) {//单个字节的读取
+			System.out.print((char)len);
+			fos.write(len);
+		}*/
+		byte []a=new byte[1024];
+		int len=0;
+		while((len=fis.read(a))!=-1) {//以字节数组方式的读取
+			System.out.print(a);
+			fos.write(a);
+		}
+		fos.close();
+		fis.close();
+	
+	}
+
+}
